@@ -3,55 +3,69 @@ class Shape
 public:
 	Shape();// constructor
 	~Shape();// deconstructor
-	 virtual void name() const = 0; // print the name of the shape
-	 virtual double perimeter(double,double,double,double,double); // calculate perimeter
-	 virtual double area(double, double, double, double, double); // calculate area
-     virtual void draw() const =0;// draws shape
+	 virtual void name() ; // print the name of the shape
+	 virtual void draw();// draws shape
+	 virtual double perimeter(); // calculate perimeter
+	 virtual double area(); // calculate area
 	
 };
 
-class circle
+class Circle
 {
 private:
 	double radius; //radius of the circle
 public:
-	 circle();
-	~circle();
+	 Circle(double); // constructor
+	~Circle();
 	// getting the perimeters need for calculation	
-	void setradius();
-	double getradius();
+	void setRadius(double);
+	double getRadius();
+	virtual void name();
+	virtual void draw();
+	virtual double perimeter(); // calculate perimeter
+	virtual double area(); // calculate area
 };
 
-class rectangle
+class Rectangle
 {
 private:
 	double width; // width of the rectangle
 	double length; // length of the rectangle
 public:
-	rectangle();
-	~rectangle();
+	Rectangle(double , double);
+	~Rectangle();
 	
 	// setting perimeters need for calculations	
-	void setwidth();
-	void setlength();
+	void setWidth(double);
+	void setLength();
 	// getting the perimeters need for calculation
-	double getwidth();
-	double getlength();
+	double getWidth();
+	double getLength();
+
+	virtual void name();
+	virtual void draw();
+	virtual double perimeter(double, double, double, double, double); // calculate perimeter
+	virtual double area(double, double, double, double, double); // calculate area
 
 };
 
-class triangle
+class Triangle
 {
 private:
 	double base; // base of the triangle
 	double height; // height of the triangle
 public:
-	triangle();
-	~triangle();
+	Triangle();
+	~Triangle();
 	// setting perimeters need for calculations	
 	void setbase();
 	void setheight();
 	// getting the perimeters need for calculation	
 	double getbase();
 	double getheight();
+
+	virtual void name();
+	virtual void draw();
+	virtual double perimeter(double, double, double, double, double); // calculate perimeter
+	virtual double area(double, double, double, double, double); // calculate area
 };
